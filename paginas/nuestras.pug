@@ -1,0 +1,37 @@
+mixin container( identificacion, imagen)
+  <article class=""+identificacion>
+    img(src=""+imagen, alt="Foto de Galeria")
+    a.close(href="") 
+      <i class="fas fa-window-close"></i>
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Nuestros Trabajos
+        link(rel="stylesheet", href="../css/nuestras.css")
+    body 
+      header 
+        include ../elementos/pug/menu.pug
+        section.galeria 
+          a(href="#img1")
+            img(src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", alt="Foto de Galeria")  
+          a(href="#img2")
+            img(src="https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", alt="Foto de Galeria")  
+          a(href="#img3")
+            img(src="https://images.pexels.com/photos/814499/pexels-photo-814499.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", alt="Foto de Galeria")  
+          a(href="#img4")
+            img(src="https://images.pexels.com/photos/1476880/pexels-photo-1476880.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", alt="Foto de Galeria")  
+          a(href="#img5")
+            img(src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")  
+          a(href="#img6")
+            img(src="https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", alt="Foto de Galeria")  
+        article.light-box#img1
+          img(src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", alt="Foto de Galeria")
+          a.close(href="") 
+            <i class="fas fa-window-close"></i>
+      +container(".light-box#img2,https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 ")
+          
+      <script src="https://kit.fontawesome.com/bd269fc52d.js" crossorigin="anonymous"></script>
+        

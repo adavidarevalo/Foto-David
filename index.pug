@@ -1,0 +1,87 @@
+mixin caja( imagen, parrafo)
+  .caja-ejemplo 
+    .caja-ejemplo-img 
+      img(src=""+imagen, alt="Foto Artistico")
+    .caja-ejemplo-contenido
+      data 01/04/2021
+      p=parrafo 
+      p Tomada por: 
+        a(href="#") Fotografo 
+mixin paquetes(categoria,valor,fotos)
+  .paquetes-opciones 
+    h3=categoria 
+      hr
+    .paquetes-opciones-precios
+      span $
+      p=valor
+    ul 
+      li=fotos
+      li Diseño 
+      li Ecengrafia 
+    .paquetes-opciones-button
+      a(href="#") Comprar Ahora! 
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Foto David
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="stylesheet", href="css/media.css")
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    body 
+      header 
+        .header-opasity 
+        include elementos/pug/menu.pug
+        .header-logo 
+          img(src="img/logo-david.svg", alt="Logo de Foto David")
+        include elementos/pug/social.pug
+      main  
+        section 
+          .main-elegir
+            .main-elegir-container 
+              h2 Elije a Foto David 
+              p Nunca una empresa es igual a otra, aunque todos le 
+                |asegurarán que son los mejores en su rubro. Nosotros 
+                |le decimos, compruébelo Usted mismo contratando 
+                |nuestros servicios y notará la diferencia.
+              .main-elegir-button
+                a(href="#")  Sobre Nosotros
+        section 
+          .main-experiencia 
+            p Con mas de 8 años de Experiencia...
+        section 
+          .main-trabajos 
+            h2 Algunos de Nuestros Trabajos.
+            .main-trabajos-contenedor
+              +caja("https://images.pexels.com/photos/1252869/pexels-photo-1252869.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "Monte de Quito a media noche con retoques en ilustrador.")       
+              +caja("https://images.pexels.com/photos/1363876/pexels-photo-1363876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "Foto tomada en las Playas de Montañita a media noche con un toque de morado.")       
+              +caja("https://images.pexels.com/photos/1532771/pexels-photo-1532771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "Foto tomada en las Playas de Guayaquil a media tarde con un toque de celeste.")       
+              +caja("https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", "Foto tomada en las llanuras de Ambato a media tarde con un toque de negro.")       
+        section 
+          .nuestros-equipos 
+            h2 Nuestros Equipos.
+            .nuestro-equipos-container
+              .nuestros-equipos-camara
+                img(src="img/svg/camara.svg", alt="camara")
+              .nuestros-equipos-info
+                h3 Cámara Digital Nikon D3200
+                p La Nikon D3200 está equipada con un sistema 
+                 |de enfoque automático de 11 puntos y tiene un rango 
+                 |de sensibilidad ISO que va desde 100 a 6400 (y si 
+                 |forzamos llega a 12800 ISO) y presenta disparo 
+                 |continuo de 4 fps que no parece resentirse demasiado 
+                 |por esos 24 megapíxeles, sin duda una apuesta fuerte en 
+                 |cuanto a resolución por parte de Nikon. Tal y como ya 
+                 |vimos en su flamante D800.
+        section.paquetes
+          .paquetes-info   
+            h2 Nuestros Paquetes 
+            p Elige nuestras promociones dependiendo de sus necesidades.
+          .paquetes-money
+            +paquetes("Categoria A", "50", "20 fotos 4k ")
+            +paquetes("Categoria B", "40", "15 fotos 4k ")
+            +paquetes("Categoria C", "30", "10 fotos 4k ")
+    include elementos/pug/footer.pug
